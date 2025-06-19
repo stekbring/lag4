@@ -121,7 +121,7 @@
     </style>
 </head>
 <body>
-    <h1>Ledtråd 4  -  Korsord</h1>
+    <h1>Ledtråd 8  -  Korsord</h1>
     <p>Fyll i rutorna för att hitta ett dolt ord</p>
 
     <div class="grid" id="grid"></div>
@@ -129,24 +129,24 @@
     <div class="clue-list">
         <h2>Ledtrådar</h2>
         <ol>
-            <li>Man snurrar och kastar något med kraft</li>
-            <li>Det man tar när man är ledig från jobbet</li>
-            <li>Aktiv fysisk aktivitet</li>
-            <li>Det man gör på tåget när det är försenat</li>
-            <li>Det man gör med munnen i samtal</li>
-            <li>Det man köper till gymmet för lång tid</li>
-            <li>Den övre delen av kroppen</li>
-            <li>Det bastun är full av</li>
-            <li>Röken tar vägen ut här</li>
-            <li>Man gör detta på dansgolvet</li>
-            <li>Sätts under skidor för fäste</li>
-            <li>Svensk tradition med kaffe och kanske bulle</li>
-            <li>Benen pekar åt olika håll</li>
-            <li>En vanlig svensk julväxt</li>
-            <li>Där man kan ligga i varmt vatten</li>
-            <li>Det som finns kvar efter middagen</li>
-            <li>Något du gör på samma sätt varje dag</li>
-            <li>Ett medicinskt instrument man för in i kroppen</li>
+            <li>Vem är bäst på skattjakter?</li>
+            <li>Martins främsta färdmedel</li>
+            <li>Kan man bli hos Putte Lundin</li>
+            <li>Minus tre</li>
+            <li>Vad heter den ökände gäddan som kanal dyr sprängde?</li>
+            <li>Åseda för länge länge sedan</li>
+            <li>Berg i Sagan om ringen</li>
+            <li>Vem avnjuter en golden shower hemma hos Mira?</li>
+            <li>Plus fyrtiosju</li>
+            <li>Fågel som barrar på hösten</li>
+            <li>Ringbärare</li>
+            <li>EXC563</li>
+            <li>Genomskinlig sten</li>
+            <li>Vad heter kanalen som tillhör tre av de bästa fiskarna i sverige?</li>
+            <li>Kan man ta på en skida</li>
+            <li>Är det hos Felicia på fest</li>
+            <li>Kärring från lilla sjöjungfrun</li>
+            <li>Oäkting i Game of Thrones</li>
         </ol>
     </div>
 
@@ -156,24 +156,24 @@
 
         // Nu med numberOffset för att styra positionen för siffran i raden
         const rows = [
-            { len: 6, clueIndex: 1, startPos: 6, numberOffset: 5 },
-            { len: 8, clueIndex: 1, startPos: 6, numberOffset: 5 },
-            { len: 6, clueIndex: 2, startPos: 5, numberOffset: 4 },
-            { len: 6, clueIndex: 3, startPos: 4, numberOffset: 3 },
-            { len: 6, clueIndex: 4, startPos: 3, numberOffset: 2 },
-            { len: 7, clueIndex: 5, startPos: 2, numberOffset: 1 },
-            { len: 5, clueIndex: 2, startPos: 5, numberOffset: 4 },
-            { len: 5, clueIndex: 3, startPos: 4, numberOffset: 3 },
-            { len: 8, clueIndex: 6, startPos: 1, numberOffset: 0 },
-            { len: 7, clueIndex: 4, startPos: 3, numberOffset: 2 },
-            { len: 7, clueIndex: 2, startPos: 5, numberOffset: 4 },
-            { len: 4, clueIndex: 1, startPos: 6, numberOffset: 5 },
-            { len: 6, clueIndex: 3, startPos: 4, numberOffset: 3 },
             { len: 4, clueIndex: 2, startPos: 5, numberOffset: 4 },
-            { len: 6, clueIndex: 3, startPos: 4, numberOffset: 3 },
-            { len: 4, clueIndex: 1, startPos: 6, numberOffset: 5 },
-            { len: 5, clueIndex: 2, startPos: 5, numberOffset: 4 },
-            { len: 5, clueIndex: 1, startPos: 6, numberOffset: 5 }
+            { len: 5, clueIndex: 4, startPos: 3, numberOffset: 2 },
+            { len: 5, clueIndex: 4, startPos: 3, numberOffset: 2 },
+            { len: 9, clueIndex: 4, startPos: 3, numberOffset: 2 },
+            { len: 6, clueIndex: 2, startPos: 5, numberOffset: 4 },
+            { len: 6, clueIndex: 0, startPos: 7, numberOffset: 6 },
+            { len: 6, clueIndex: 2, startPos: 5, numberOffset: 4 },
+            { len: 6, clueIndex: 1, startPos: 6, numberOffset: 5 },
+            { len: 5, clueIndex: 0, startPos: 7, numberOffset: 6 },
+            { len: 5, clueIndex: 1, startPos: 6, numberOffset: 5 },
+            { len: 5, clueIndex: 1, startPos: 6, numberOffset: 5 },
+            { len: 7, clueIndex: 3, startPos: 4, numberOffset: 3 },
+            { len: 4, clueIndex: 0, startPos: 7, numberOffset: 6 },
+            { len: 8, clueIndex: 1, startPos: 6, numberOffset: 5 },
+            { len: 5, clueIndex: 0, startPos: 7, numberOffset: 6 },
+            { len: 5, clueIndex: 4, startPos: 3, numberOffset: 2 },
+            { len: 6, clueIndex: 0, startPos: 7, numberOffset: 6 },
+            { len: 4, clueIndex: 1, startPos: 6, numberOffset: 5 }
         ];
 
         rows.forEach((row, rowIndex) => {
@@ -229,6 +229,31 @@
                 }
             });
         });
+    // Funktion för att spara alla inputs i localStorage
+        function saveInputs() {
+            allInputs.forEach((input, i) => {
+                localStorage.setItem('input_' + i, input.value);
+            });
+        }
+
+        // Funktion för att ladda alla inputs från localStorage
+        function loadInputs() {
+            allInputs.forEach((input, i) => {
+                const savedValue = localStorage.getItem('input_' + i);
+                if (savedValue) {
+                    input.value = savedValue;
+                }
+            });
+        }
+
+        // Anropa loadInputs när sidan laddas
+        window.addEventListener('load', loadInputs);
+
+        // Spara input-värde vid varje förändring
+        allInputs.forEach((input) => {
+            input.addEventListener('input', saveInputs);
+        });
+
     </script>
 </body>
 </html>
